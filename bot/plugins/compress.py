@@ -265,10 +265,10 @@ async def parser(name):
    if 'anime_season' in dic.keys():
     season = dic['anime_season']
     season = removeLeadingZeros(str(season))
-    string = f'{season}×'
+    string = f'S{season}'
    if 'episode_number' in dic.keys():
     ep = str(dic['episode_number'])
-    string = string + f'{ep} - '
+    string = string + f'E{ep} - '
    if 'anime_title' in dic.keys():
      anime = dic['anime_title']
      anime = removeUsernames(str(anime))
