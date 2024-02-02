@@ -29,7 +29,7 @@ async def help_message(bot, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('SOURCE CODE', url='https://github.com/SamXD7/Encoder')
+                    InlineKeyboardButton('Developer', url='https://t.me/Nirusaki')
                 ]
             ]
         ),
