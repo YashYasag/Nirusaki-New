@@ -226,7 +226,7 @@ async def upload_handle1(bot, from_user_id, filepath, filename, caption, reply, 
   thumb = await functions.screenshot(filepath)
   width, height = await ffmpeg.resolution(filepath)
   duration2 = await ffmpeg.duration(filepath)
-  caption_text = f"<b>{caption}</b>"
+  caption_text = f"<b>{caption}@DenjiXD17</b>"
   s = await bot.send_video(
       video=filepath,
       chat_id=from_user_id,
