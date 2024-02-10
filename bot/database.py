@@ -12,7 +12,7 @@ async def adduser(message):
         post = {
             "_id": int(message.from_user.id),
             "ffmpeg": ffmpeg,
-            "mode": "video"
+            "mode": "document"
         }
         collection.insert_one(post)
 
