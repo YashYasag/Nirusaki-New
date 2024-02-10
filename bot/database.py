@@ -10,7 +10,7 @@ async def adduser(message):
   if collection.find_one({'_id' : int(message.from_user.id)}):
    LOGS.info("YES")
   else:
-   post = {'_id' : int(message.from_user.id), 'ffmpeg' : ffmpeg, 'mode' : 'video'}
+   post = {'_id' : int(message.from_user.id), 'ffmpeg' : ffmpeg, 'mode' : 'document'}
    x = collection.insert_one(post)
 
 
