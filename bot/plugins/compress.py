@@ -332,14 +332,14 @@ async def encode(dic):
   reply = await bot.send_message(text=dfix, chat_id=from_user_id, reply_to_message_id=reply_video_id)
   media_type = str(dic['media'])
   if media_type == "MessageMediaType.VIDEO":
-    file_id = str(dic['video']['file_id'])
-    filename = str(dic['video']['file_name'])
-    filesize = int(dic['video']['file_size'])
-    file_dir = 'downloads/' + filename
-  else:
     file_id = str(dic['document']['file_id'])
     filename = str(dic['document']['file_name'])
     filesize = int(dic['document']['file_size'])
+    file_dir = 'downloads/' + filename
+  else:
+    file_id = str(dic['video']['file_id'])
+    filename = str(dic['video']['file_name'])
+    filesize = int(dic['video']['file_size'])
     file_dir = 'downloads/' + filename
   d_start = time.time()
   down = await bot.download_media(
