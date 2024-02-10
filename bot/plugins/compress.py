@@ -265,10 +265,10 @@ async def parser(name):
    if 'anime_season' in dic.keys():
     season = dic['anime_season']
     season = removeLeadingZeros(str(season))
-    string = f'S{season}'
+    string = f'{season}×'
    if 'episode_number' in dic.keys():
     ep = str(dic['episode_number'])
-    string = string + f'E{ep} - '
+    string = string + f'{ep} - '
    if 'anime_title' in dic.keys():
      anime = dic['anime_title']
      anime = removeUsernames(str(anime))
@@ -332,15 +332,15 @@ async def encode(dic):
   reply = await bot.send_message(text=dfix, chat_id=from_user_id, reply_to_message_id=reply_video_id)
   media_type = str(dic['media'])
   if media_type == "MessageMediaType.VIDEO":
-      file_id = str(dic["video"]["file_id"])
-      filename = str(dic["video"]["file_name"])
-      filesize = int(dic["video"]["file_size"])
-      file_dir = "downloads/" + filename
+    file_id = str(dic['video']['file_id'])
+    filename = str(dic['video']['file_name'])
+    filesize = int(dic['video']['file_size'])
+    file_dir = 'downloads/' + filename
   else:
-      file_id = str(dic["document"]["file_id"])
-      filename = str(dic["document"]["file_name"])
-      filesize = int(dic["document"]["file_size"])
-      file_dir = "downloads/" + filename
+    file_id = str(dic['document']['file_id'])
+    filename = str(dic['document']['file_name'])
+    filesize = int(dic['document']['file_size'])
+    file_dir = 'downloads/' + filename
   d_start = time.time()
   down = await bot.download_media(
      message=file_id,
@@ -350,9 +350,9 @@ async def encode(dic):
   )
   filename = await replacee(filename)
   joined = await parser(filename)
-  with_ext = filename + '.mkv'
+  with_ext = joined + '.mkv'
   duration = await ffmpeg.duration(filepath=down)
-  output_name = 'encodes/' + filename + '.mkv'
+  output_name = 'encodes/' + joined + '.mkv'
   await encode_it(down, output_name, reply, from_user_id, duration)
   await reply.edit("📤 **Uploading Video:**")
   await upload_handle1(bot, from_user_id, output_name, with_ext, joined, reply, reply_video_id)
