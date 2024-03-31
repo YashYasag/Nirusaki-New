@@ -18,15 +18,15 @@ except:
 
 
 class Config(object):
-  API_ID = int(os.environ.get("API_ID"))
-  API_HASH = str(os.environ.get("API_HASH"))
-  BOT_TOKEN = str(os.environ.get("BOT_TOKEN"))
-  DATABASE_URL = str(os.environ.get("DATABASE_URL"))
-  USERNAME = str(os.environ.get("BOT_USERNAME"))
-  LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL"))
-  AUTH_USERS = list(set(int(x) for x in os.environ.get("AUTH_USERS", "1676326120").split()))
-  ADMIN = list(set(int(x) for x in os.environ.get("ADMIN", "5629750139").split()))
-  OWNER = list(set(int(x) for x in os.environ.get("OWNER").split()))
+  API_ID = int(os.environ.get("API_ID", "4018758"))
+  API_HASH = str(os.environ.get("API_HASH", "622bba3cf046315531f71f9d97fa6c2a"))
+  BOT_TOKEN = str(os.environ.get("BOT_TOKEN", "5822396703:AAG7sX8J2gaYpF9J_ZHGphpqZ4VXSdpF"))
+  DATABASE_URL = str(os.environ.get("DATABASE_URL", "mongodb+srv://Nikhil:lol@cluster0.opa09.mongodb.net/?retryWrites=true&w=majority"))
+  USERNAME = str(os.environ.get("BOT_USERNAME", "Almighty_Push_Bot"))
+  LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "ygsrhggd"))
+  AUTH_USERS = list(set(int(x) for x in os.environ.get("AUTH_USERS", "5385471287").split()))
+  ADMIN = list(set(int(x) for x in os.environ.get("ADMIN", "5385471287").split()))
+  OWNER = list(set(int(x) for x in os.environ.get("OWNER", "5385471287").split()))
   TEMP = 'temp/'
   DOWNLOAD_DIR = str(os.environ.get("DOWNLOAD_DIR"))
 
